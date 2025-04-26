@@ -46,7 +46,13 @@ public class WeaveMojo extends AbstractMojo {
                         element(name("outputDirectory"), "${project.build.outputDirectory}"),
                         element(name("forceAjcCompile"), "true"),
                         element(name("showWeaveInfo"), "true"),
-                        element(name("Xlint"), "ignore")
+                        element(name("Xlint"), "ignore"),
+                        element(name("aspectLibraries"),
+                                element(name("aspectLibrary"),
+                                        element(name("groupId"), "dev.pk7r"),
+                                        element(name("artifactId"), "spigot-starter-core")
+                                )
+                        )
                 ),
                 executionEnvironment(
                         project,
